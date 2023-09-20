@@ -1,3 +1,4 @@
+---
 # labeler "full" schema
 # https://github.com/marketplace/actions/auto-labeler
 
@@ -23,5 +24,5 @@ comments:
 labels:
   exclude-from-changelog:
     include:
-      - 'pre-commit\.ci'
+    - pre-commit\.ci
     exclude: []

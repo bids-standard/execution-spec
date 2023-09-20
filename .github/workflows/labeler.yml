@@ -1,4 +1,5 @@
-name: "Label PRs"
+---
+name: Label PRs
 # See https://github.com/marketplace/actions/auto-labeler
 
 on:
