@@ -2,10 +2,17 @@
 site_name: BIDS Apps execution specification
 site_url: https://bids-standard.github.io/execution-spec
 repo_url: https://github.com/bids-standard/execution-spec
+
 nav:
 - Specification:
+  - Scope: scope.md
   - Specification: specification.md
+  - User interface: ui.md
+  - Inputs: inputs.md
+  - Outputs: outputs.md
   - Contributors: CONTRIBUTING.md
+  - Examples: examples.md
+
 theme:
   name: material
   favicon: images/favicon.png
@@ -34,8 +41,11 @@ theme:
     toggle:
       icon: material/brightness-4
       name: Switch to system preference
+
 edit_uri: edit/main/src/
-copyright: Copyright &copy; 2023, BIDS execution Contributors - <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+
+copyright: Copyright &copy; BIDS execution Contributors - <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+
 extra:
   generator: false
   social:
@@ -45,11 +55,15 @@ extra:
     link: https://github.com/bids-standard/execution-spec
   - icon: fontawesome/brands/google
     link: https://groups.google.com/g/bids-discussion
+
 markdown_extensions:
 - toc:
     anchorlink: true
 - pymdownx.superfences
+
 plugins:
 - search
+
 docs_dir: src
+
 use_directory_urls: false

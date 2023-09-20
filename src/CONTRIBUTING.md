@@ -1,6 +1,6 @@
-# Contributing to the BIDS-Apps specification
+# Contributing
 
-## Extension leads
+## Lead Contributors
 
 -   Christopher J Markiewicz [markiewicz@stanford.edu](mailto:markiewicz@stanford.edu)
 -   Gregory Kiar [gregory.kiar@childmind.org](mailto:gregory.kiar@childmind.org)
