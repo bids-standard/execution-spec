@@ -25,17 +25,17 @@ integration of BIDS datasets and applications into such platforms.
 
 This is guided by the following requirements and desiderata:
 
-- A tool's parameters should be easily translatable to the BIDS application
-  input specification.
-- A specification should be maximally descriptive rather than prescriptive.
-- A structured execution specification should be produced as a result of using
-  an application.
-- The specification should be sufficiently descriptive to perfectly reproduce
-  analyses.
-- A structured set of input parameters should be usable in place of command-line
-  arguments.
-- It should be possible to make multiple BIDS datasets available to an
-  application.
+-   A tool's parameters should be easily translatable to the BIDS application
+    input specification.
+-   A specification should be maximally descriptive rather than prescriptive.
+-   A structured execution specification should be produced as a result of using
+    an application.
+-   The specification should be sufficiently descriptive to perfectly reproduce
+    analyses.
+-   A structured set of input parameters should be usable in place of command-line
+    arguments.
+-   It should be possible to make multiple BIDS datasets available to an
+    application.
 
 ### Relation of BIDS Applications to BIDS
 
@@ -69,22 +69,22 @@ interpreted as described in [[RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 The terminology that will be used is inherited from BIDS-Raw and includes the
 following:
 
-- **Dataset** — a set of neuroimaging and behavioral data acquired for a purpose
-  of a particular study. A dataset consists of data acquired from one or more
-  subjects and/or sessions.
-- **Subject** — a person or animal participating in the study. Interchangeable
-  with "**Participant**".
-- **Session** — a consistent logical grouping of neuroimaging and other data
-  across subjects.
-- **Run** — an uninterrupted repetition of data acquisition that has the same
-  acquisition parameters and task (however events can change from run to run due
-  to different subject response or randomized nature of the stimuli).
-- **&lt;index>** - a nonnegative integer, possibly prefixed with arbitrary
-  number of 0s for consistent indentation, for example, it is 01 in run-01
-  following run-&lt;index> specification.
-- **&lt;label>** - an alphanumeric value, possibly prefixed with arbitrary
-  number of 0s for consistent indentation, for example, it is rest in task-rest
-  following task-&lt;label> specification.
+-   **Dataset** — a set of neuroimaging and behavioral data acquired for a purpose
+    of a particular study. A dataset consists of data acquired from one or more
+    subjects and/or sessions.
+-   **Subject** — a person or animal participating in the study. Interchangeable
+    with "**Participant**".
+-   **Session** — a consistent logical grouping of neuroimaging and other data
+    across subjects.
+-   **Run** — an uninterrupted repetition of data acquisition that has the same
+    acquisition parameters and task (however events can change from run to run due
+    to different subject response or randomized nature of the stimuli).
+-   **&lt;index>** - a nonnegative integer, possibly prefixed with arbitrary
+    number of 0s for consistent indentation, for example, it is 01 in run-01
+    following run-&lt;index> specification.
+-   **&lt;label>** - an alphanumeric value, possibly prefixed with arbitrary
+    number of 0s for consistent indentation, for example, it is rest in task-rest
+    following task-&lt;label> specification.
 
 ## BIDS Application Specification
 
@@ -95,23 +95,23 @@ application outputs.
 BIDS contains "required", "recommended" and "optional" fields. These are
 indicated throughout the document:
 
-- **REQUIRED**: essential to be BIDS compliant (i.e. MUST as per RFC2199)
-- **RECOMMENDED**: gives a warning if not present (i.e. SHOULD as per RFC2199)
-- **OPTIONAL**: no warning if missing (i.e. MAY as per RFC2199)
+-   **REQUIRED**: essential to be BIDS compliant (i.e. MUST as per RFC2199)
+-   **RECOMMENDED**: gives a warning if not present (i.e. SHOULD as per RFC2199)
+-   **OPTIONAL**: no warning if missing (i.e. MAY as per RFC2199)
 
 Ultimately, through using Boutiques to define tools and their parameters, the
 goal is that each tool can be interacted with as follows:
 
-```
-    $ # Using Boutiques directly, the "exec launch" commands will run the app
-    $ bosh exec launch bids-app --invocation input_params.json
-    $ # Eventually, we envision that BIDS Application interface will also support
-    $ # simple, lightweight overrides to provide some of these common values via
-    $ # the command line directly.
-    $ bids-launch bids-app --input-dataset /path/to/bids /path/to/derivatives \
-        --output-location /path/to/output \
-        --analysis-level subject--subject-label 01 02 \
-        --random-seed 0xBID5CAFE
+```bash
+$ # Using Boutiques directly, the "exec launch" commands will run the app
+$ bosh exec launch bids-app --invocation input_params.json
+$ # Eventually, we envision that BIDS Application interface will also support
+$ # simple, lightweight overrides to provide some of these common values via
+$ # the command line directly.
+$ bids-launch bids-app --input-dataset /path/to/bids /path/to/derivatives \
+    --output-location /path/to/output \
+    --analysis-level subject--subject-label 01 02 \
+    --random-seed 0xBID5CAFE
 ```
 
 In the next sections, the `bids-app` tool, a Boutiques descriptor, and the
@@ -502,13 +502,13 @@ to the BIDS specification, the reserved arguments are defined here as a rule
 which maps to BIDS entities, rather than specifying the moving goalpost of an
 exhaustive list. The arguments may be specified as follows:
 
-- The argument ID SHOULD be in CamelCase, with the form &lt;entity>Label or
-  &lt;entity>Index, depending on whether the associated values are constrained
-  to be alphanumeric or numeric, respectively.
-- The argument MUST accept values referring to labels/indices, as consistent
-  with the above, in either the form of a list or a file containing a
-  line-delimited list. The items provided SHOULD NOT include the entity label in
-  addition to the labels/indices.
+-   The argument ID SHOULD be in CamelCase, with the form &lt;entity>Label or
+    &lt;entity>Index, depending on whether the associated values are constrained
+    to be alphanumeric or numeric, respectively.
+-   The argument MUST accept values referring to labels/indices, as consistent
+    with the above, in either the form of a list or a file containing a
+    line-delimited list. The items provided SHOULD NOT include the entity label in
+    addition to the labels/indices.
 
 While several examples exist within Table 5, to the following demonstrates how
 the above rules can be applied for the BIDS entity "subject":
@@ -524,7 +524,7 @@ Acceptable and equivalent usages:
     --subject-label subject_ids.txt
 ```
 
-\_Contents of `subject_ids.txt`:
+Contents of `subject_ids.txt`:
 
 ```
 01
