@@ -59,7 +59,7 @@ BIDS-Derivatives specification.
 
 Please refer to general BIDS specification document for context and general
 guidelines (definitions, units, directory structure, missing values, stimulus
-and event information, etc.):
+and event information and so on):
 [https://bids-specification.readthedocs.io/en/stable/](https://bids-specification.readthedocs.io/en/stable/)
 
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
@@ -124,7 +124,7 @@ A uniform user interface is essential to scalable deployment of BIDS
 Applications. This section describes the common interface components that may be
 relied upon by users or platforms running these applications (callers).
 Command-line interfaces map between positional or flag arguments provided
-through an interactive shell program (e.g. Bash) to a program and program
+through an interactive shell program (for example Bash) to a program and program
 behavior. However, tools written in different languages or following different
 conventions may represent and parse these arguments distinctly. For the purposes
 of automated execution of diverse tools, a more useful interface is a mapping of
@@ -137,7 +137,7 @@ other utilities. The Boutiques toolkit, named bosh, will be referred to when
 discussing examples throughout this specification.
 
 Instead of requiring specific positional arguments and flags which assign common
-names to expected options (e.g., "subject-label") in the command-line interfaces
+names to expected options (for example "subject-label") in the command-line interfaces
 themselves, BIDS Applications should provide a Boutiques descriptor — a
 standardized JSON file that describes the command line behavior and operation of
 a tool — that map the tool-specific common arguments to these common names,
@@ -280,7 +280,7 @@ BIDS Applications:
   <tr>
    <td><strong><code>OutputDataSpecification</code></strong>
    </td>
-   <td>OPTIONAL. List. If output data conforms to a standard definition (e.g. NIDM-1.1.0), these data standards may be included as a list of strings.
+   <td>OPTIONAL. List. If output data conforms to a standard definition (for example NIDM-1.1.0), these data standards may be included as a list of strings.
    </td>
   </tr>
   <tr>
@@ -325,7 +325,7 @@ fields, described fully in
   <tr>
    <td><strong><code>list</code></strong>
    </td>
-   <td>OPTIONAL. Boolean. Indicates whether or not the input field is a list of inputs. One of<strong><code> {true, false}</code></strong>. If omitted, it will be interpreted as false (e.g., non-list input).
+   <td>OPTIONAL. Boolean. Indicates whether or not the input field is a list of inputs. One of<strong><code> {true, false}</code></strong>. If omitted, it will be interpreted as false (for example non-list input).
    </td>
   </tr>
   <tr>
@@ -337,7 +337,7 @@ fields, described fully in
   <tr>
    <td><strong><code>optional</code></strong>
    </td>
-   <td>OPTIONAL. Boolean. Indicates whether or not the input field is required. One of <strong><code>{true, false}</code></strong>. If omitted, will be interpreted as false (e.g. non-optional input).
+   <td>OPTIONAL. Boolean. Indicates whether or not the input field is required. One of <strong><code>{true, false}</code></strong>. If omitted, will be interpreted as false (for example non-optional input).
    </td>
   </tr>
   <tr>
@@ -355,7 +355,7 @@ fields, described fully in
   <tr>
    <td><strong><code>value-key</code></strong>
    </td>
-   <td>OPTIONAL. String. String to replace in command-line template string. If specified, this MUST NOT be either a superset or subset of the value-key attribute associated with another object in the descriptor; to ensure this, brackets are typically used (e.g. "<strong>[value]</strong>").
+   <td>OPTIONAL. String. String to replace in command-line template string. If specified, this MUST NOT be either a superset or subset of the value-key attribute associated with another object in the descriptor; to ensure this, brackets are typically used (for example "<strong>[value]</strong>").
    </td>
   </tr>
 </table>
@@ -433,7 +433,7 @@ be expressed in the tool's interface.
   <tr>
    <td><strong>Argument ID</strong>
    </td>
-   <td><strong>e.g. CLI Flag</strong>
+   <td><strong>for example CLI Flag</strong>
    </td>
    <td><strong>Definition</strong>
    </td>
@@ -496,7 +496,7 @@ to their associated values in the original application.
 
 #### Reserved arguments
 
-The ability to filter BIDS entities (e.g. subject, session, or run) allows for
+The ability to filter BIDS entities (for example subject, session, or run) allows for
 the selection of subsets of datasets. To be extensible as new entities are added
 to the BIDS specification, the reserved arguments are defined here as a rule
 which maps to BIDS entities, rather than specifying the moving goalpost of an
@@ -534,7 +534,7 @@ Acceptable and equivalent usages:
 
 In all cases where such arguments are defined and applied, only files in the
 BIDS dataset that have a value for the specified entities will be subject to
-filtering. That is, if a file does not have a given entity (e.g., entity value
+filtering. That is, if a file does not have a given entity (for example entity value
 for it is &lt;None>), the file will be included.
 
 Applications are not required to support these arguments, but MUST NOT assign
@@ -735,7 +735,7 @@ open a missing file. In this case, it is RECOMMENDED to use exit code 66
 If the dataset is not BIDS-compliant, then the BIDS App MAY fail immediately
 with exit code 16.
 
-If the dataset contains the required files but is not BIDS-compliant (e.g., a
+If the dataset contains the required files but is not BIDS-compliant (for example a
 "dirty" dataset that has more files than needed), then the BIDS App MAY treat
 the dataset as valid.
 
