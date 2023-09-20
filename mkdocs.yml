@@ -1,6 +1,7 @@
 ---
 site_name: BIDS Apps execution specification
-site_url: https://bids-standard.github.io/execution-spec/
+site_url: https://bids-standard.github.io/execution-spec
+repo_url: https://github.com/bids-standard/execution-spec
 nav:
 - Specification:
   - Specification: specification.md
@@ -9,6 +10,31 @@ theme:
   name: material
   favicon: images/favicon.png
   logo: images/logo.png
+  features:
+  - navigation.top
+  - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  palette:
+    # Palette toggle for automatic mode
+  - media: (prefers-color-scheme)
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+    # Palette toggle for light mode
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+    # Palette toggle for dark mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to system preference
+edit_uri: edit/main/src/
 copyright: Copyright &copy; 2023, BIDS execution Contributors - <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
 extra:
   generator: false
@@ -16,7 +42,7 @@ extra:
   - icon: fontawesome/brands/twitter
     link: https://twitter.com/BIDSstandard/
   - icon: fontawesome/brands/github
-    link: https://github.com/bids-standard/execution-spec.git
+    link: https://github.com/bids-standard/execution-spec
   - icon: fontawesome/brands/google
     link: https://groups.google.com/g/bids-discussion
 markdown_extensions:
