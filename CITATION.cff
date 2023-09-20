@@ -6,11 +6,11 @@ title: bids-apps-execution
 
 abstract: bids-apps-execution
 
-version: v0.1.0
+version: 0.1.0
 
 license: CC-BY-4.0
 
-repository-code: https://github.com/bids-standard/bids-specification
+repository-code: https://github.com/bids-standard/execution-spec
 
 message: Please cite it as below.
 
@@ -20,5 +20,5 @@ keywords:
   - standards
 
 authors:
-  - given-names: Aaron
-    family-names: Oliver-Taylor
+  - given-names: foo
+    family-names: bar
