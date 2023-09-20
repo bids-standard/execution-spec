@@ -1,0 +1,5 @@
+[codespell]
+skip = *.js,*.svg,*.eps,.git,env,venv
+ignore-words-list = fo,te,als
+builtin = clear,rare,en-GB_to_en-US
+

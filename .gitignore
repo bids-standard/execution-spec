@@ -1,0 +1,7 @@
+site/
+.DS_Store
+.idea
+venvs
+.vscode/
+
+
