@@ -3,9 +3,9 @@ name: Validation
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: ["*"]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -31,33 +31,6 @@ jobs:
       run: npm install `cat npm-requirements.txt`
     - name: Run style checks
       run: npx remark src/**/*.md --frail --rc-path .remarkrc
-
-  # YAML
-  yamllint:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v4
-      with:
-        python-version: 3
-    - name: Install dependencies
-      run: pip install yamllint
-    - name: Lint yml files in src/schema
-      run: yamllint -f standard src/schema/ -c .yamllint.yml
-
-  # Python best practices
-  python-style:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v4
-      with:
-        python-version: 3
-    - run: python -m pip install --upgrade flake8 black isort[colors]
-    - run: black --diff --color --check tools/schemacode
-    - run: isort --diff --color --check tools/schemacode
-    - run: flake8
-      working-directory: tools/schemacode
 
   # Avoid Latin phrases to improve readability
   latin-phrases:
@@ -96,3 +69,10 @@ jobs:
         pip3 install cffconvert
     - name: Validate CITATION.cff
       run: make validate_citation_cff
+
+
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
