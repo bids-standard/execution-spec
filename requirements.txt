@@ -3,3 +3,4 @@ mkdocs-material>=5.4
 pre-commit
 black
 flake8
+cffconvert
