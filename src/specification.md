@@ -982,27 +982,3 @@ use:
   "command-line-flag": "--participant-label"
 }
 ```
-
-## Change-log
-
-**v0.0.1 YYYY-MM-DD:**
-
-- Initial work on specification
-- X, Y and Z features added
-
-## A. Summary of changes from BIDS Apps 1.0
-
-### New features
-
-- Adopted Boutiques validatable and runnable descriptive standard
-- Increased flexibility for runtime arguments and command-line formatting
-- Defined exit codes to indicate various application outcomes
-- Link between application descriptions and data specification versions
-- Extensible definition which will scale with the BIDS standards as new entities
-  are added
-
-### Deprecated features
-
-- Position arguments are no longer supported.
-
-### Suggested migration process

@@ -1,6 +1,6 @@
 ---
 site_name: BIDS Apps execution specification
-site_url: https://bids-specification.readthedocs.io/en/stable/
+site_url: https://bids-standard.github.io/execution-spec/
 nav:
 - Specification:
   - Specification: specification.md
