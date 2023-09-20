@@ -38,8 +38,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v4
-    - name: Run Python script to check for Latin phrases - Master
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    - name: Run Python script to check for Latin phrases
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: |
         python no-bad-latin.py
       working-directory: tools
@@ -53,15 +53,14 @@ jobs:
   validate_cff:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Check whether the citation metadata from CITATION.cff is valid
       uses: citation-file-format/cffconvert-github-action@2.0.0
       with:
         args: --validate
 
-
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v4
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
