@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
--  Position arguments are no longer supported.
+-   Position arguments are no longer supported.
 
 ### Removed
 

@@ -9,7 +9,7 @@ fields, described fully in
 ## List of relevant inputs object properties for the BIDS Application specification
 
 | Field name        | Requirement Level | Data type | Description                                                                                                                                                                                                                                                      |
-|-------------------|-------------------|:----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------------|-------------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | command-line-flag | OPTIONAL          | String    | For non-positional arguments, the flag which is associated with the argument on the command-line.                                                                                                                                                                |
 | id                | REQUIRED          | String    | The argument ID.  Alphanumeric values and underscores only.  CamelCase is recommended.                                                                                                                                                                           |
 | list              | OPTIONAL          | Boolean   | Indicates whether or not the input field is a list of inputs.  One of {true, false}.  If omitted, it will be interpreted as false (for example non-list input).                                                                                                  |
@@ -19,13 +19,12 @@ fields, described fully in
 | value-choices     | OPTIONAL          | List      | List of possible values that the parameter may take.                                                                                                                                                                                                             |
 | value-key         | OPTIONAL          | String    | String to replace in command-line template string.  If specified, this MUST NOT be either a superset or subset of the value-key attribute associated with another object in the descriptor; to ensure this, brackets are typically used (for example "[value]"). |
 
-
 ### List of group object properties and their role within the BIDS Application specification
 
 In addition to describing inputs themselves, groups of inputs and their relationships can be defined as follows:
 
 | Field name         | Requirement Level | Data type | Description                                                                                      |
-|--------------------|-------------------|:----------|--------------------------------------------------------------------------------------------------|
+|--------------------|-------------------|-----------|--------------------------------------------------------------------------------------------------|
 | all-or-none        | OPTIONAL          | Boolean   | True if all parameters included in this group need to be included together. .                    |
 | description        | RECOMMENDED       | String    | Description of the input group.                                                                  |
 | id                 | REQUIRED          | String    | A short, unique, informative identifier containing only alphanumeric characters and underscores. |
@@ -44,7 +43,7 @@ be expressed in the tool's interface.
 ### List of custom object properties and roles within the BIDS Application specification.
 
 | Argument ID    | CLI Flag            | Requirement Level | Data type | Description                                                                                                                                                                                                                                                                            |
-|----------------|-------------------- |-------------------|:----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|----------------|-------------------- |-------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AnalysisLevel  | `--analysis-level`  | REQUIRED          | String    | String with value-choices which are a subset of {run, session, subject, dataset, meta}.  The app may support one or more of these analysis levels.  A default may be set, and unsupported analysis levels should return an exit code of 17, consistent with the definition in Table 7. |
 | Help           | `--help`            | REQUIRED          | Flag      | Flag that specifies whether or not to show the help-text that describes how the tool may be correctly used.                                                                                                                                                                            |
 | InputDataset   | `--input-dataset`   | REQUIRED          | List      | List of URIs/paths of the BIDS datasets to be processed.  Whether or not the order of listed datasets is important MUST be specified in the parameter description.  The tool MUST NOT reorder the user-specified list.                                                                 |

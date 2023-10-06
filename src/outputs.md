@@ -4,9 +4,8 @@
 
 BIDS Apps MUST be able to be called via the BIDS Application Boutiques
 descriptor and corresponding input parameter dictionary files, commonly referred
-to in the Boutiques parlance as "invocations", and accept any BIDS dataset. It
-is RECOMMENDED that BIDS Applications produce BIDS-Derivatives-compliant
-datasets.
+to in the Boutiques parlance as "invocations", and accept any BIDS dataset.
+It is RECOMMENDED that BIDS Applications produce BIDS-Derivatives-compliant datasets.
 
 ### List of relevant output-files object properties for the BIDS Application specification
 
@@ -43,23 +42,20 @@ support them.
 
 ### Valid BIDS datasets
 
-If the dataset is BIDS-compliant and contains the files required by the
-application, then the application should make a best effort to perform its task
-to completion.
+If the dataset is BIDS-compliant and contains the files required by the application,
+then the application should make a best effort to perform its task to completion.
 
-If the dataset is BIDS-compliant but does not contain the files required by the
-application, then the application MAY fail immediately or when attempting to
-open a missing file. In this case, it is RECOMMENDED to use exit code 66
-(NOINPUT).
+If the dataset is BIDS-compliant but does not contain the files required by the application,
+then the application MAY fail immediately or when attempting to open a missing file.
+In this case, it is RECOMMENDED to use exit code `66` (NOINPUT).
 
 ### Invalid BIDS datasets
 
-If the dataset is not BIDS-compliant, then the BIDS App MAY fail immediately
-with exit code 16.
+If the dataset is not BIDS-compliant, then the BIDS App MAY fail immediately with exit code `16`.
 
-If the dataset contains the required files but is not BIDS-compliant (for example a
-"dirty" dataset that has more files than needed), then the BIDS App MAY treat
-the dataset as valid.
+If the dataset contains the required files but is not BIDS-compliant
+(for example a "dirty" dataset that has more files than needed),
+then the BIDS App MAY treat the dataset as valid.
 
 ### Exit codes
 
@@ -78,13 +74,13 @@ should be avoided unless applicable. Exit codes 2 and 126-165 may be set by
 [Bash](https://www.tldp.org/LDP/abs/html/exitcodes.html), and so will be
 reserved.
 
-The following exit codes are RECOMMENDED for consistent error handling under
-POSIX and Windows environments:
+The following exit codes are RECOMMENDED for consistent error handling
+under POSIX and Windows environments:
 
 #### Reserved exit codes and their definitions
 
 | Exit code | Definition                                                                                  |
-|:----------|---------------------------------------------------------------------------------------------|
+|-----------|---------------------------------------------------------------------------------------------|
 | 0         | SUCCESS. The program completed successfully.                                                |
 | 1         | FAILURE. The program failed for unspecified reasons.                                        |
 | 2         | Reserved                                                                                    |

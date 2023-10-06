@@ -43,7 +43,7 @@ be simply named as name.json.
 ## List of relevant base Boutiques properties and their role within BIDS Applications.
 
 | Field name          | Requirement Level | Data type | Description                                                                                                                                                                               |
-|---------------------|-------------------|:----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|---------------------|-------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | command-line        | REQUIRED          | String    | A template string including the command and references to the value-keys of all possible inputs.  The ordering imposed here may be significant, in particular for non-optional arguments. |
 | custom              | REQUIRED          | Object    | Object which can contain extensible metadata.  This has a single required element, as described in Table 2.                                                                               |
 | inputs              | REQUIRED          | List      | List of objects which contain input parameter definitions.  Described in Table 3.                                                                                                         |
@@ -59,13 +59,12 @@ be simply named as name.json.
 | error-codes         | OPTIONAL          | List      | List of objects that contain error code information.  The reserved error conditions are described in Table 7.                                                                             |
 | groups              | OPTIONAL          | List      | List of objects that contain relational information among input parameters as described in Table 4.  This is not to be confused with any other BIDS-relevant definition of groups.        |
 
-
 ### List of custom object properties and roles within the BIDS Application specification
 
 The `custom` object has the following defined fields for use in the context of BIDS Applications.
 
-| Field name              | Requirement Level   | Data type   | Description                                                                                                                             |
-|-------------------------|---------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| BIDSAppSpecVersion      | REQUIRED            | String      | The version of the BIDS application specification with which the application complies.                                                  |
-| OutputDataSpecification | OPTIONAL            | List        | If output data conforms to a standard definition (for example NIDM-1. 1. 0), these data standards may be included as a list of strings. |
-| <unspecified>           | OPTIONAL            | Any         | Any key referring to arbitrary metadata that may be relevant or of interest to the application and its users.                           |
+| Field name              | Requirement Level | Data type | Description                                                                                                                             |
+|-------------------------|-------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| BIDSAppSpecVersion      | REQUIRED          | String    | The version of the BIDS application specification with which the application complies.                                                  |
+| OutputDataSpecification | OPTIONAL          | List      | If output data conforms to a standard definition (for example NIDM-1. 1. 0), these data standards may be included as a list of strings. |
+| <unspecified>           | OPTIONAL          | Any       | Any key referring to arbitrary metadata that may be relevant or of interest to the application and its users.                           |
