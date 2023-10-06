@@ -28,11 +28,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
--  Adopted Boutiques validatable and runnable descriptive standard
--  Increased flexibility for runtime arguments and command-line formatting
--  Defined exit codes to indicate various application outcomes
--  Link between application descriptions and data specification versions
--  Extensible definition which will scale with the BIDS standards as new entities are added
+-   Adopted Boutiques validatable and runnable descriptive standard
+-   Increased flexibility for runtime arguments and command-line formatting
+-   Defined exit codes to indicate various application outcomes
+-   Link between application descriptions and data specification versions
+-   Extensible definition which will scale with the BIDS standards as new entities are added
 
 ### Changed
 
