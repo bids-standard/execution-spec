@@ -1,8 +1,6 @@
+# Outputs
 
-
-### Outputs
-
-#### File formats for the application specification and report
+## File formats for the application specification and report
 
 BIDS Apps MUST be able to be called via the BIDS Application Boutiques
 descriptor and corresponding input parameter dictionary files, commonly referred
@@ -83,7 +81,7 @@ datasets.
   </tr>
 </table>
 
-#### Execution Report & Updating Dataset Description
+## Execution Report & Updating Dataset Description
 
 When generated, an execution report that completely describes the processing
 that was executed and the dataset MUST comply with the BIDS Provenance Extension
@@ -93,7 +91,7 @@ specified in the `output-files` section of the tool descriptor.
 Similarly, the dataset_description.json file SHOULD be updated to reflect the
 processing that has occurred by the BIDS Application.
 
-### Behaviors
+## Behaviors
 
 For a given set of arguments, the behavior of a BIDS Application will typically
 vary based on the contents of the input dataset. The dataset may be
@@ -102,7 +100,7 @@ requires, or it may not. This section describes the expected behavior under each
 combination of cases, and describes RECOMMENDED exit codes on systems that
 support them.
 
-#### Valid BIDS datasets
+### Valid BIDS datasets
 
 If the dataset is BIDS-compliant and contains the files required by the
 application, then the application should make a best effort to perform its task
@@ -113,7 +111,7 @@ application, then the application MAY fail immediately or when attempting to
 open a missing file. In this case, it is RECOMMENDED to use exit code 66
 (NOINPUT).
 
-#### Invalid BIDS datasets
+### Invalid BIDS datasets
 
 If the dataset is not BIDS-compliant, then the BIDS App MAY fail immediately
 with exit code 16.
@@ -122,7 +120,7 @@ If the dataset contains the required files but is not BIDS-compliant (for exampl
 "dirty" dataset that has more files than needed), then the BIDS App MAY treat
 the dataset as valid.
 
-#### Exit codes
+### Exit codes
 
 An exit code or [exit status](https://en.wikipedia.org/wiki/Exit_status) is an
 integer indicating the reason for termination for use by the parent program or

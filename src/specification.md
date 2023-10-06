@@ -9,9 +9,9 @@ There are three domains of requirements that BIDS Applications must specify:
 BIDS contains "required", "recommended" and "optional" fields. These are
 indicated throughout the document:
 
--   **REQUIRED**: essential to be BIDS compliant (i.e. MUST as per RFC2199)
--   **RECOMMENDED**: gives a warning if not present (i.e. SHOULD as per RFC2199)
--   **OPTIONAL**: no warning if missing (i.e. MAY as per RFC2199)
+-   **REQUIRED**: essential to be BIDS compliant (meaning MUST as per RFC2199)
+-   **RECOMMENDED**: gives a warning if not present (meaning SHOULD as per RFC2199)
+-   **OPTIONAL**: no warning if missing (meaning MAY as per RFC2199)
 
 Ultimately, through using Boutiques to define tools and their parameters, the
 goal is that each tool can be interacted with as follows:

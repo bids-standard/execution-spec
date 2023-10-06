@@ -1,4 +1,3 @@
-
 # Example BIDS App
 
 This section describes a BIDS Application named bids-app that can only operate

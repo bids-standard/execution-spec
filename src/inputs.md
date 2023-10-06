@@ -212,6 +212,7 @@ exhaustive list. The arguments may be specified as follows:
 -   The argument ID SHOULD be in CamelCase, with the form &lt;entity>Label or
     &lt;entity>Index, depending on whether the associated values are constrained
     to be alphanumeric or numeric, respectively.
+
 -   The argument MUST accept values referring to labels/indices, as consistent
     with the above, in either the form of a list or a file containing a
     line-delimited list. The items provided SHOULD NOT include the entity label in
@@ -226,14 +227,14 @@ CLI flag: `--subject-label`
 
 Acceptable and equivalent usages:
 
-```
+```bash
     --subject-label 01 02 03
     --subject-label subject_ids.txt
 ```
 
 Contents of `subject_ids.txt`:
 
-```
+```text
 01
 02
 03

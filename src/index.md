@@ -26,7 +26,7 @@ This document is a draft for the BIDS Application
 specification for the purposes of tool description, provenance and
 reproducibility. This is a working document in draft stage and any comments are
 welcome. This document inherits all components of the original specification
-(e.g. how to store imaging data, events, stimuli and behavioral data), and
+(for example how to store imaging data, events, stimuli and behavioral data), and
 should be seen as an extension of it, not a replacement.
 
 ## How can I help?
