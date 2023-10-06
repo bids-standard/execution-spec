@@ -61,5 +61,3 @@ jobs:
         use-quiet-mode: yes
         use-verbose-mode: yes
         config-file: md_link_check_config.json
-        folder-path: SRC
-        file-path: ./README.md

@@ -10,8 +10,9 @@ nav:
   - User interface: ui.md
   - Inputs: inputs.md
   - Outputs: outputs.md
-  - Contributors: CONTRIBUTING.md
   - Examples: examples.md
+- Contributors: CONTRIBUTING.md
+- Release notes: CHANGELOG.md
 
 theme:
   name: material

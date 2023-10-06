@@ -2,9 +2,9 @@
 
 There are three domains of requirements that BIDS Applications must specify:
 
-1. User interface components
-2. Required application behaviors
-3. Required application outputs
+1.  User interface components
+1.  Required application behaviors
+1.  Required application outputs
 
 BIDS contains "required", "recommended" and "optional" fields. These are
 indicated throughout the document:

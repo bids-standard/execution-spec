@@ -23,17 +23,17 @@ integration of BIDS datasets and applications into such platforms.
 
 This is guided by the following requirements and desiderata:
 
--   A tool's parameters should be easily translatable to the BIDS application
-    input specification.
+-   A tool's parameters should be easily translatable to the BIDS application input specification.
+
 -   A specification should be maximally descriptive rather than prescriptive.
--   A structured execution specification should be produced as a result of using
-    an application.
--   The specification should be sufficiently descriptive to perfectly reproduce
-    analyses.
--   A structured set of input parameters should be usable in place of command-line
-    arguments.
--   It should be possible to make multiple BIDS datasets available to an
-    application.
+
+-   A structured execution specification should be produced as a result of using an application.
+
+-   The specification should be sufficiently descriptive to perfectly reproduce analyses.
+
+-   A structured set of input parameters should be usable in place of command-line arguments.
+
+-   It should be possible to make multiple BIDS datasets available to an application.
 
 ## Relation to BIDS
 
@@ -44,8 +44,7 @@ which were described in Gorgolewski, et al. 2017
 here referred to as BIDS-Apps 1.0. Backwards compatibility with BIDS-Apps 1.0 is
 not an explicit goal, but can be achieved in many cases as is discussed in
 Section [3.1.2.1](#3-1-2-1-backwards-compatibility-9). A summary of changes from
-BIDS-Apps 1.0 is included as
-[Appendix A](#a-summary-of-changes-from-bids-apps-1-0-17).
+BIDS-Apps 1.0 is included in the [CHANGELOG](./CHANGELOG.md#0.1.0.dev).
 
 This specification is seen as complementary to BIDS-Derivatives, which is part
 of BIDS as of version 1.4.0, and the most recent stable version may be found at
@@ -60,26 +59,32 @@ guidelines (definitions, units, directory structure, missing values, stimulus
 and event information and so on):
 [https://bids-specification.readthedocs.io/en/stable/](https://bids-specification.readthedocs.io/en/stable/)
 
-The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [[RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
+The keywords
+"MUST", "MUST NOT", "REQUIRED",
+"SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",
+"MAY", and "OPTIONAL" in this document
+are to be interpreted as described in [[RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-The terminology that will be used is inherited from BIDS-Raw and includes the
-following:
+The terminology that will be used is inherited from BIDS-Raw
+and includes the following:
 
 -   **Dataset** — a set of neuroimaging and behavioral data acquired for a purpose
     of a particular study. A dataset consists of data acquired from one or more
     subjects and/or sessions.
--   **Subject** — a person or animal participating in the study. Interchangeable
-    with "**Participant**".
--   **Session** — a consistent logical grouping of neuroimaging and other data
-    across subjects.
+
+-   **Subject** — a person or animal participating in the study.
+    Interchangeable with "**Participant**".
+
+-   **Session** — a consistent logical grouping of neuroimaging and other data across subjects.
+
 -   **Run** — an uninterrupted repetition of data acquisition that has the same
     acquisition parameters and task (however events can change from run to run due
     to different subject response or randomized nature of the stimuli).
--   **&lt;index>** - a nonnegative integer, possibly prefixed with arbitrary
+
+-   **<index>** - a nonnegative integer, possibly prefixed with arbitrary
     number of 0s for consistent indentation, for example, it is 01 in run-01
-    following run-&lt;index> specification.
--   **&lt;label>** - an alphanumeric value, possibly prefixed with arbitrary
+    following run-<index> specification.
+
+-   **<label>** - an alphanumeric value, possibly prefixed with arbitrary
     number of 0s for consistent indentation, for example, it is rest in task-rest
-    following task-&lt;label> specification.
+    following task-<label> specification.
