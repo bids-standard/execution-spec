@@ -38,7 +38,7 @@ which were described in Gorgolewski, et al. 2017
 (doi:[10.1371/journal.pcbi.1005209](https://doi.org/10.1371/journal.pcbi.1005209)),
 here referred to as BIDS-Apps 1.0. Backwards compatibility with BIDS-Apps 1.0 is
 not an explicit goal, but can be achieved in many cases as is discussed in
-Section [3.1.2.1](#3-1-2-1-backwards-compatibility-9). A summary of changes from
+the section [on backwards-compatibility](./inputs#backwards-compatibility). A summary of changes from
 BIDS-Apps 1.0 is included in the [CHANGELOG](./CHANGELOG.md#0.1.0.dev).
 
 This specification is seen as complementary to BIDS-Derivatives, which is part

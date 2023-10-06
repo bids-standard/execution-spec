@@ -6,15 +6,15 @@ There are three domains of requirements that BIDS Applications must specify:
 1.  Required application behaviors
 1.  Required application outputs
 
-BIDS contains "required", "recommended" and "optional" fields. These are
-indicated throughout the document:
+BIDS contains "required", "recommended" and "optional" fields.
+These are indicated throughout the document:
 
 -   **REQUIRED**: essential to be BIDS compliant (meaning MUST as per RFC2199)
 -   **RECOMMENDED**: gives a warning if not present (meaning SHOULD as per RFC2199)
 -   **OPTIONAL**: no warning if missing (meaning MAY as per RFC2199)
 
-Ultimately, through using Boutiques to define tools and their parameters, the
-goal is that each tool can be interacted with as follows:
+Ultimately, through using Boutiques to define tools and their parameters,
+the goal is that each tool can be interacted with as follows:
 
 ```bash
 $ # Using Boutiques directly, the "exec launch" commands will run the app
@@ -28,6 +28,6 @@ $ bids-launch bids-app --input-dataset /path/to/bids /path/to/derivatives \
     --random-seed 0xBID5CAFE
 ```
 
-In the next sections, the `bids-app` tool, a Boutiques descriptor, and the
-`input_params.json`, a set of invocation parameters corresponding to this app,
+In the next sections, the `bids-app` tool, a Boutiques descriptor,
+and the `input_params.json`, a set of invocation parameters corresponding to this app,
 will be defined.

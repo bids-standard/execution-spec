@@ -86,7 +86,7 @@ datasets.
 When generated, an execution report that completely describes the processing
 that was executed and the dataset MUST comply with the BIDS Provenance Extension
 Proposal (BEP28). These outputs are OPTIONAL, and if provided, should be
-specified in the `output-files` section of the tool descriptor.
+specified in the [`output-files`](./outputs.md) of the tool descriptor.
 
 Similarly, the dataset_description.json file SHOULD be updated to reflect the
 processing that has occurred by the BIDS Application.
