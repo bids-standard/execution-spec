@@ -40,7 +40,7 @@ is what is required to exist as the state "id" in the Boutiques descriptor, and
 will be validated, while the example CLI Flag provides a possible way this could
 be expressed in the tool's interface.
 
-### List of custom object properties and roles within the BIDS Application specification.
+### List of custom object properties and roles within the BIDS Application specification
 
 | Argument ID    | CLI Flag            | Requirement Level | Data type | Description                                                                                                                                                                                                                                                                            |
 |----------------|-------------------- |-------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

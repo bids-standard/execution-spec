@@ -40,7 +40,7 @@ value which indicates the version of the BIDS application specification to which
 they conform, together with some additional optional fields. Descriptors SHOULD
 be simply named as name.json.
 
-## List of relevant base Boutiques properties and their role within BIDS Applications.
+## List of relevant base Boutiques properties and their role within BIDS Applications
 
 | Field name          | Requirement Level | Data type | Description                                                                                                                                                                               |
 |---------------------|-------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

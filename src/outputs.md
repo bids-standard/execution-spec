@@ -21,6 +21,7 @@ It is RECOMMENDED that BIDS Applications produce BIDS-Derivatives-compliant data
 | path-template                     | OPTIONAL          | String           | Describes the output file path relative to the execution directory.  May contain input value keys and wildcards.  Example: "xx".                                                                         |
 | path-template-stripped-extensions | OPTIONAL          | List             | List of file extensions that will be stripped from the input values before being substituted in the path template.  Example: [". nii",". nii. gz"].                                                      |
 | value-key                         | OPTIONAL          | String           | A string contained in command-line, substituted by the output value and/or flag at runtime.                                                                                                              |
+
 ## Execution Report & Updating Dataset Description
 
 When generated, an execution report that completely describes the processing
