@@ -8,79 +8,20 @@ to in the Boutiques parlance as "invocations", and accept any BIDS dataset. It
 is RECOMMENDED that BIDS Applications produce BIDS-Derivatives-compliant
 datasets.
 
-<table>
-  <tr>
-   <td colspan="2" >Table 6: List of relevant output-files object properties for the BIDS Application specification.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Field name</strong>
-   </td>
-   <td><strong>Definition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>command-line-flag</code></strong>
-   </td>
-   <td>OPTIONAL. String. Flag associated with the argument on the command-line. Examples: -o, --output
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>description</code></strong>
-   </td>
-   <td>RECOMMENDED. String. A plain-text description of the output-files of the BIDS Application.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>file-template</code></strong>
-   </td>
-   <td>OPTIONAL. Array of strings. An array of strings that may contain value keys and together populate the self-contained structure of a configuration file.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>id</code></strong>
-   </td>
-   <td>REQUIRED. String. A short, unique, informative identifier containing only alphanumeric characters and underscores. Typically used to generate variable names. (should conform <strong><code>^[0-9,_,a-z,A-Z]*$</code></strong>). Example: "data_file"
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>list</code></strong>
-   </td>
-   <td>OPTIONAL. Boolean. True if output is a list of values.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>name</code></strong>
-   </td>
-   <td>REQUIRED. String. A human-readable output name. Example: 'Supplementary input file for X task'.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>optional</code></strong>
-   </td>
-   <td>OPTIONAL. Boolean. True if output may not be produced by the tool.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>path-template</code></strong>
-   </td>
-   <td>OPTIONAL. String. Describes the output file path relative to the execution directory. May contain input value keys and wildcards. Example: "xx".
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>path-template-stripped-extensions</code></strong>
-   </td>
-   <td>OPTIONAL. List. List of file extensions that will be stripped from the input values before being substituted in the path template. Example: [".nii",".nii.gz"].
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>value-key</code></strong>
-   </td>
-   <td>OPTIONAL. String. A string contained in command-line, substituted by the output value and/or flag at runtime.
-   </td>
-  </tr>
-</table>
+### List of relevant output-files object properties for the BIDS Application specification
 
+| Field name                        | Requirement Level   | Data type        | Description                                                                                                                                                                                              |
+|:----------------------------------|:--------------------|:-----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| command-line-flag                 | OPTIONAL            | String           | Flag associated with the argument on the command-line.  Examples: -o, --output                                                                                                                           |
+| description                       | RECOMMENDED         | String           | A plain-text description of the output-files of the BIDS Application.                                                                                                                                    |
+| file-template                     | OPTIONAL            | Array of strings | An array of strings that may contain value keys and together populate the self-contained structure of a configuration file.                                                                              |
+| id                                | REQUIRED            | String           | A short, unique, informative identifier containing only alphanumeric characters and underscores.  Typically used to generate variable names.  (should conform ^[0-9,_,a-z,A-Z]*$).  Example: "data_file" |
+| list                              | OPTIONAL            | Boolean          | True if output is a list of values.                                                                                                                                                                      |
+| name                              | REQUIRED            | String           | A human-readable output name.  Example: 'Supplementary input file for X task'.                                                                                                                           |
+| optional                          | OPTIONAL            | Boolean          | True if output may not be produced by the tool.                                                                                                                                                          |
+| path-template                     | OPTIONAL            | String           | Describes the output file path relative to the execution directory.  May contain input value keys and wildcards.  Example: "xx".                                                                         |
+| path-template-stripped-extensions | OPTIONAL            | List             | List of file extensions that will be stripped from the input values before being substituted in the path template.  Example: [". nii",". nii. gz"].                                                      |
+| value-key                         | OPTIONAL            | String           | A string contained in command-line, substituted by the output value and/or flag at runtime.                                                                                                              |
 ## Execution Report & Updating Dataset Description
 
 When generated, an execution report that completely describes the processing
@@ -140,111 +81,23 @@ reserved.
 The following exit codes are RECOMMENDED for consistent error handling under
 POSIX and Windows environments:
 
-<table>
-  <tr>
-   <td colspan="2" >Table 7: Reserved exit codes and their definitions.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Exit code</strong>
-   </td>
-   <td><strong>Definition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>0</code></strong>
-   </td>
-   <td>SUCCESS. The program completed successfully.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>1</code></strong>
-   </td>
-   <td>FAILURE. The program failed for unspecified reasons.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>2</code></strong>
-   </td>
-   <td>Reserved
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>16-31</code></strong>
-   </td>
-   <td><em>BIDS-related codes. Reserved except the following</em>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>16</code></strong>
-   </td>
-   <td>An input dataset failed BIDS validation.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>17</code></strong>
-   </td>
-   <td>Unknown analysis level.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>18</code></strong>
-   </td>
-   <td>Entity-based filtering options selected no files.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>19</code></strong>
-   </td>
-   <td>Both command-line arguments and a parameter invocation file were passed to the application.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>64-78</code></strong>
-   </td>
-   <td><em>BSD codes - Reserved except the following.</em>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>64</code></strong>
-   </td>
-   <td>USAGE. The command was used incorrectly.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>65</code></strong>
-   </td>
-   <td>DATAERR. The input data was incorrect in some way.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>66</code></strong>
-   </td>
-   <td>NOINPUT. The input data was missing or unreadable.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>73</code></strong>
-   </td>
-   <td>CANTCREAT. An output file/directory cannot be created.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>74</code></strong>
-   </td>
-   <td>IOERR. Failure during file reading/writing.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>75</code></strong>
-   </td>
-   <td>TEMPFAIL. Temporary failure. Another run is expected to succeed.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>126-165</code></strong>
-   </td>
-   <td><em>BASH codes - Reserved</em>
-   </td>
-  </tr>
-</table>
+#### Reserved exit codes and their definitions
+
+| Exit code   | Definition                                                                                  |
+|:------------|:--------------------------------------------------------------------------------------------|
+| 0           | SUCCESS. The program completed successfully.                                                |
+| 1           | FAILURE. The program failed for unspecified reasons.                                        |
+| 2           | Reserved                                                                                    |
+| 16-31       | BIDS-related codes. Reserved except the following                                           |
+| 16          | An input dataset failed BIDS validation.                                                    |
+| 17          | Unknown analysis level.                                                                     |
+| 18          | Entity-based filtering options selected no files.                                           |
+| 19          | Both command-line arguments and a parameter invocation file were passed to the application. |
+| 64-78       | BSD codes - Reserved except the following.                                                  |
+| 64          | USAGE. The command was used incorrectly.                                                    |
+| 65          | DATAERR. The input data was incorrect in some way.                                          |
+| 66          | NOINPUT. The input data was missing or unreadable.                                          |
+| 73          | CANTCREAT. An output file/directory cannot be created.                                      |
+| 74          | IOERR. Failure during file reading/writing.                                                 |
+| 75          | TEMPFAIL. Temporary failure. Another run is expected to succeed.                            |
+| 126-165     | BASH codes - Reserved                                                                       |

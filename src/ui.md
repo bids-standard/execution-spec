@@ -40,133 +40,32 @@ value which indicates the version of the BIDS application specification to which
 they conform, together with some additional optional fields. Descriptors SHOULD
 be simply named as name.json.
 
-<table>
-  <tr>
-   <td colspan="2" ><strong>Table 1: </strong>List of relevant base Boutiques properties and their role within BIDS Applications.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Field name</strong>
-   </td>
-   <td><strong>Definition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>command-line</code></strong>
-   </td>
-   <td>REQUIRED. String. A template string including the command and references to the value-keys of all possible inputs. The ordering imposed here may be significant, in particular for non-optional arguments.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>custom</code></strong>
-   </td>
-   <td>REQUIRED. Object. Object which can contain extensible metadata. This has a single required element, as described in Table 2.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>inputs</code></strong>
-   </td>
-   <td>REQUIRED. List. List of objects which contain input parameter definitions. Described in Table 3.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>name</code></strong>
-   </td>
-   <td>REQUIRED. String.  The name of the BIDS Application.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>output-files</code></strong>
-   </td>
-   <td>REQUIRED. List. List of objects which contain output parameter definitions. Described in Table 6.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>schema-version</code></strong>
-   </td>
-   <td>REQUIRED. String. Boutiques schema version. Must be "≥0.5". This is not to be confused with the BIDS Application schema and associated version.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>tool-version</code></strong>
-   </td>
-   <td>REQUIRED. String. Version of the BIDS Application.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>description</code></strong>
-   </td>
-   <td>RECOMMENDED. String. A plain-text description of the BIDS Application.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>descriptor-url</code></strong>
-   </td>
-   <td>RECOMMENDED. String. Link to the descriptor itself. Likely a GitHub repo alongside the described tool, for example.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>doi</code></strong>
-   </td>
-   <td>RECOMMENDED. String. DOI of the descriptor returned once published via Boutiques. (Note: This is not the DOI of the tool itself.)
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>suggested-resources</code></strong>
-   </td>
-   <td>RECOMMENDED. Object. Contains an execution walltime-estimate in seconds, memory usage in MB, and CPU/GPU usage in number of core threads/devices.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>container-image</code></strong>
-   </td>
-   <td>OPTIONAL. Object. The name and location of a container image, such as those in Docker or Singularity formats, containing the configured application.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>error-codes</code></strong>
-   </td>
-   <td>OPTIONAL. List. List of objects that contain error code information. The reserved error conditions are described in Table 7.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>groups</code></strong>
-   </td>
-   <td>OPTIONAL. List. List of objects that contain relational information among input parameters as described in Table 4. This is not to be confused with any other BIDS-relevant definition of groups.
-   </td>
-  </tr>
-</table>
+## List of relevant base Boutiques properties and their role within BIDS Applications.
 
-The `custom` object has the following defined fields for use in the context of
-BIDS Applications:
+| Field name          | Requirement Level   | Data type   | Description                                                                                                                                                                               |
+|:--------------------|:--------------------|:------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| command-line        | REQUIRED            | String      | A template string including the command and references to the value-keys of all possible inputs.  The ordering imposed here may be significant, in particular for non-optional arguments. |
+| custom              | REQUIRED            | Object      | Object which can contain extensible metadata.  This has a single required element, as described in Table 2.                                                                               |
+| inputs              | REQUIRED            | List        | List of objects which contain input parameter definitions.  Described in Table 3.                                                                                                         |
+| name                | REQUIRED            | String      | The name of the BIDS Application.                                                                                                                                                         |
+| output-files        | REQUIRED            | List        | List of objects which contain output parameter definitions.  Described in Table 6.                                                                                                        |
+| schema-version      | REQUIRED            | String      | Boutiques schema version.  Must be "≥0. 5".  This is not to be confused with the BIDS Application schema and associated version.                                                          |
+| tool-version        | REQUIRED            | String      | Version of the BIDS Application.                                                                                                                                                          |
+| description         | RECOMMENDED         | String      | A plain-text description of the BIDS Application.                                                                                                                                         |
+| descriptor-url      | RECOMMENDED         | String      | Link to the descriptor itself.  Likely a GitHub repo alongside the described tool, for example.                                                                                           |
+| doi                 | RECOMMENDED         | String      | DOI of the descriptor returned once published via Boutiques.  (Note: This is not the DOI of the tool itself. )                                                                            |
+| suggested-resources | RECOMMENDED         | Object      | Contains an execution walltime-estimate in seconds, memory usage in MB, and CPU/GPU usage in number of core threads/devices.                                                              |
+| container-image     | OPTIONAL            | Object      | The name and location of a container image, such as those in Docker or Singularity formats, containing the configured application.                                                        |
+| error-codes         | OPTIONAL            | List        | List of objects that contain error code information.  The reserved error conditions are described in Table 7.                                                                             |
+| groups              | OPTIONAL            | List        | List of objects that contain relational information among input parameters as described in Table 4.  This is not to be confused with any other BIDS-relevant definition of groups.        |
 
-<table>
-  <tr>
-   <td colspan="2" ><strong>Table 2: </strong>List of custom object properties and roles within the BIDS Application specification.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Field name</strong>
-   </td>
-   <td><strong>Definition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>BIDSAppSpecVersion</code></strong>
-   </td>
-   <td>REQUIRED. String. The version of the BIDS application specification with which the application complies.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>OutputDataSpecification</code></strong>
-   </td>
-   <td>OPTIONAL. List. If output data conforms to a standard definition (for example NIDM-1.1.0), these data standards may be included as a list of strings.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>&lt;unspecified></code></strong>
-   </td>
-   <td>OPTIONAL. Any. Any key referring to arbitrary metadata that may be relevant or of interest to the application and its users.
-   </td>
-  </tr>
-</table>
+
+### List of custom object properties and roles within the BIDS Application specification
+
+The `custom` object has the following defined fields for use in the context of BIDS Applications.
+
+| Field name              | Requirement Level   | Data type   | Description                                                                                                                             |
+|:------------------------|:--------------------|:------------|:----------------------------------------------------------------------------------------------------------------------------------------|
+| BIDSAppSpecVersion      | REQUIRED            | String      | The version of the BIDS application specification with which the application complies.                                                  |
+| OutputDataSpecification | OPTIONAL            | List        | If output data conforms to a standard definition (for example NIDM-1. 1. 0), these data standards may be included as a list of strings. |
+| <unspecified>           | OPTIONAL            | Any         | Any key referring to arbitrary metadata that may be relevant or of interest to the application and its users.                           |

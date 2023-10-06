@@ -6,124 +6,33 @@ fields, described fully in
 [https://github.com/boutiques/boutiques/blob/0.5.25/schema/README.md#inputs](https://github.com/boutiques/boutiques/blob/0.5.25/schema/README.md#inputs)
 ([source](https://github.com/boutiques/boutiques/blob/0.5.25/tools/python/boutiques/schema/descriptor.schema.json#L247-L448)):
 
-<table>
-  <tr>
-   <td colspan="2" ><strong>Table 3: </strong>List of relevant inputs object properties for the BIDS Application specification.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Field name</strong>
-   </td>
-   <td><strong>Definition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>command-line-flag</code></strong>
-   </td>
-   <td>OPTIONAL. String. For non-positional arguments, the flag which is associated with the argument on the command-line.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>id</code></strong>
-   </td>
-   <td>REQUIRED. String. The argument ID. Alphanumeric values and underscores only. CamelCase is recommended.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>list</code></strong>
-   </td>
-   <td>OPTIONAL. Boolean. Indicates whether or not the input field is a list of inputs. One of<strong><code> {true, false}</code></strong>. If omitted, it will be interpreted as false (for example non-list input).
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>name</code></strong>
-   </td>
-   <td>REQUIRED. String. Plain text name of input for display. Can contain spaces.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>optional</code></strong>
-   </td>
-   <td>OPTIONAL. Boolean. Indicates whether or not the input field is required. One of <strong><code>{true, false}</code></strong>. If omitted, will be interpreted as false (for example non-optional input).
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>type</code></strong>
-   </td>
-   <td>REQUIRED. String. One of <strong><code>{"String", "File", "Flag", "Number"}</code></strong>.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>value-choices</code></strong>
-   </td>
-   <td>OPTIONAL. List. List of possible values that the parameter may take.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>value-key</code></strong>
-   </td>
-   <td>OPTIONAL. String. String to replace in command-line template string. If specified, this MUST NOT be either a superset or subset of the value-key attribute associated with another object in the descriptor; to ensure this, brackets are typically used (for example "<strong>[value]</strong>").
-   </td>
-  </tr>
-</table>
+## List of relevant inputs object properties for the BIDS Application specification
 
-In addition to describing inputs themselves, groups of inputs and their
-relationships can be defined as follows in Table 4:
+| Field name        | Requirement Level   | Data type   | Description                                                                                                                                                                                                                                                      |
+|:------------------|:--------------------|:------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| command-line-flag | OPTIONAL            | String      | For non-positional arguments, the flag which is associated with the argument on the command-line.                                                                                                                                                                |
+| id                | REQUIRED            | String      | The argument ID.  Alphanumeric values and underscores only.  CamelCase is recommended.                                                                                                                                                                           |
+| list              | OPTIONAL            | Boolean     | Indicates whether or not the input field is a list of inputs.  One of {true, false}.  If omitted, it will be interpreted as false (for example non-list input).                                                                                                  |
+| name              | REQUIRED            | String      | Plain text name of input for display.  Can contain spaces.                                                                                                                                                                                                       |
+| optional          | OPTIONAL            | Boolean     | Indicates whether or not the input field is required.  One of {true, false}.  If omitted, will be interpreted as false (for example non-optional input).                                                                                                         |
+| type              | REQUIRED            | String      | One of {"String", "File", "Flag", "Number"}.                                                                                                                                                                                                                     |
+| value-choices     | OPTIONAL            | List        | List of possible values that the parameter may take.                                                                                                                                                                                                             |
+| value-key         | OPTIONAL            | String      | String to replace in command-line template string.  If specified, this MUST NOT be either a superset or subset of the value-key attribute associated with another object in the descriptor; to ensure this, brackets are typically used (for example "[value]"). |
 
-<table>
-  <tr>
-   <td colspan="2" ><strong>Table 4: </strong>List of group object properties and their role within the BIDS Application specification.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Field name</strong>
-   </td>
-   <td><strong>Definition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>all-or-none</code></strong>
-   </td>
-   <td>OPTIONAL. Boolean. True if all parameters included in this group need to be included together..
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>description</code></strong>
-   </td>
-   <td>RECOMMENDED. String. Description of the input group.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>id</code></strong>
-   </td>
-   <td>REQUIRED. String. A short, unique, informative identifier containing only alphanumeric characters and underscores.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>members</code></strong>
-   </td>
-   <td>REQUIRED. List. IDs of the input parameters belonging to this group.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>mutually-exclusive</code></strong>
-   </td>
-   <td>OPTIONAL. Boolean. True if only one input in the group may be selected at runtime.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>name</code></strong>
-   </td>
-   <td>REQUIRED. String. A human-readable name for the input group.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>one-is-required</code></strong>
-   </td>
-   <td>OPTIONAL. Boolean. True if at least one of the inputs in the group must be selected.
-   </td>
-  </tr>
-</table>
+
+### List of group object properties and their role within the BIDS Application specification
+
+In addition to describing inputs themselves, groups of inputs and their relationships can be defined as follows:
+
+| Field name         | Requirement Level   | Data type   | Description                                                                                      |
+|:-------------------|:--------------------|:------------|:-------------------------------------------------------------------------------------------------|
+| all-or-none        | OPTIONAL            | Boolean     | True if all parameters included in this group need to be included together. .                    |
+| description        | RECOMMENDED         | String      | Description of the input group.                                                                  |
+| id                 | REQUIRED            | String      | A short, unique, informative identifier containing only alphanumeric characters and underscores. |
+| members            | REQUIRED            | List        | IDs of the input parameters belonging to this group.                                             |
+| mutually-exclusive | OPTIONAL            | Boolean     | True if only one input in the group may be selected at runtime.                                  |
+| name               | REQUIRED            | String      | A human-readable name for the input group.                                                       |
+| one-is-required    | OPTIONAL            | Boolean     | True if at least one of the inputs in the group must be selected.                                |
 
 ## Required arguments
 
@@ -132,65 +41,20 @@ is what is required to exist as the state "id" in the Boutiques descriptor, and
 will be validated, while the example CLI Flag provides a possible way this could
 be expressed in the tool's interface.
 
-<table>
-  <tr>
-   <td colspan="3" ><strong>Table 5: </strong>List of custom object properties and roles within the BIDS Application specification.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Argument ID</strong>
-   </td>
-   <td><strong>for example CLI Flag</strong>
-   </td>
-   <td><strong>Definition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>AnalysisLevel</code></strong>
-   </td>
-   <td><strong><code>--analysis-level</code></strong>
-   </td>
-   <td>REQUIRED. String. String with value-choices which are a subset of {run, session, subject, dataset, meta}. The app may support one or more of these analysis levels. A default may be set, and unsupported analysis levels should return an exit code of 17, consistent with the definition in Table 7.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>Help</code></strong>
-   </td>
-   <td><strong><code>--help</code></strong>
-   </td>
-   <td>REQUIRED. Flag. Flag that specifies whether or not to show the help-text that describes how the tool may be correctly used.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>InputDataset</code></strong>
-   </td>
-   <td><strong><code>--input-dataset</code></strong>
-   </td>
-   <td>REQUIRED. List. List of URIs/paths of the BIDS datasets to be processed. Whether or not the order of listed datasets is important MUST be specified in the parameter description. The tool MUST NOT reorder the user-specified list.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>OutputLocation</code></strong>
-   </td>
-   <td><strong><code>--output-location</code></strong>
-   </td>
-   <td>REQUIRED. List. One URI/path to the location where all outputs will be stored.
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>ToolVersion</code></strong>
-   </td>
-   <td><strong><code>--version</code></strong>
-   </td>
-   <td>REQUIRED. Flag. Returns the version of the tool being used.
-   </td>
-  </tr>
-</table>
+### List of custom object properties and roles within the BIDS Application specification.
+
+| Argument ID    | CLI Flag             | Requirement Level   | Data type   | Description                                                                                                                                                                                                                                                                            |
+|:---------------|:---------------------|:--------------------|:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AnalysisLevel  | `--analysis-level`   | REQUIRED            | String      | String with value-choices which are a subset of {run, session, subject, dataset, meta}.  The app may support one or more of these analysis levels.  A default may be set, and unsupported analysis levels should return an exit code of 17, consistent with the definition in Table 7. |
+| Help           | `--help`             | REQUIRED            | Flag        | Flag that specifies whether or not to show the help-text that describes how the tool may be correctly used.                                                                                                                                                                            |
+| InputDataset   | `--input-dataset`    | REQUIRED            | List        | List of URIs/paths of the BIDS datasets to be processed.  Whether or not the order of listed datasets is important MUST be specified in the parameter description.  The tool MUST NOT reorder the user-specified list.                                                                 |
+| OutputLocation | `--output-location`  | REQUIRED            | List        | One URI/path to the location where all outputs will be stored.                                                                                                                                                                                                                         |
+| ToolVersion    | `--version`          | REQUIRED            | Flag        | Returns the version of the tool being used.                                                                                                                                                                                                                                            |
 
 ## Backwards compatibility
 
-If an app wishes to maintain backwards compatibility with BIDS-Apps 1.0, then
-the following command-line should be valid:
+If an app wishes to maintain backwards compatibility with BIDS-Apps 1.0,
+then the following command-line should be valid:
 
 ```bash
     bids-app InputDataset OutputLocation AnalysisLevel [options]
