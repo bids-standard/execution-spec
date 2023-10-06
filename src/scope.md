@@ -24,15 +24,10 @@ integration of BIDS datasets and applications into such platforms.
 This is guided by the following requirements and desiderata:
 
 -   A tool's parameters should be easily translatable to the BIDS application input specification.
-
 -   A specification should be maximally descriptive rather than prescriptive.
-
 -   A structured execution specification should be produced as a result of using an application.
-
 -   The specification should be sufficiently descriptive to perfectly reproduce analyses.
-
 -   A structured set of input parameters should be usable in place of command-line arguments.
-
 -   It should be possible to make multiple BIDS datasets available to an application.
 
 ## Relation to BIDS
