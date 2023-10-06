@@ -10,12 +10,12 @@ fields, described fully in
 
 | Field name        | Requirement Level | Data type | Description                                                                                                                                                                                                                                                      |
 |-------------------|-------------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| command-line-flag | OPTIONAL          | String    | For non-positional arguments, the flag which is associated with the argument on the command-line.                                                                                                                                                                |
 | id                | REQUIRED          | String    | The argument ID.  Alphanumeric values and underscores only.  CamelCase is recommended.                                                                                                                                                                           |
-| list              | OPTIONAL          | Boolean   | Indicates whether or not the input field is a list of inputs.  One of {true, false}.  If omitted, it will be interpreted as false (for example non-list input).                                                                                                  |
 | name              | REQUIRED          | String    | Plain text name of input for display.  Can contain spaces.                                                                                                                                                                                                       |
-| optional          | OPTIONAL          | Boolean   | Indicates whether or not the input field is required.  One of {true, false}.  If omitted, will be interpreted as false (for example non-optional input).                                                                                                         |
 | type              | REQUIRED          | String    | One of {"String", "File", "Flag", "Number"}.                                                                                                                                                                                                                     |
+| command-line-flag | OPTIONAL          | String    | For non-positional arguments, the flag which is associated with the argument on the command-line.                                                                                                                                                                |
+| list              | OPTIONAL          | Boolean   | Indicates whether or not the input field is a list of inputs.  One of {true, false}.  If omitted, it will be interpreted as false (for example non-list input).                                                                                                  |
+| optional          | OPTIONAL          | Boolean   | Indicates whether or not the input field is required.  One of {true, false}.  If omitted, will be interpreted as false (for example non-optional input).                                                                                                         |
 | value-choices     | OPTIONAL          | List      | List of possible values that the parameter may take.                                                                                                                                                                                                             |
 | value-key         | OPTIONAL          | String    | String to replace in command-line template string.  If specified, this MUST NOT be either a superset or subset of the value-key attribute associated with another object in the descriptor; to ensure this, brackets are typically used (for example "[value]"). |
 
@@ -25,12 +25,12 @@ In addition to describing inputs themselves, groups of inputs and their relation
 
 | Field name         | Requirement Level | Data type | Description                                                                                      |
 |--------------------|-------------------|-----------|--------------------------------------------------------------------------------------------------|
-| all-or-none        | OPTIONAL          | Boolean   | True if all parameters included in this group need to be included together. .                    |
-| description        | RECOMMENDED       | String    | Description of the input group.                                                                  |
 | id                 | REQUIRED          | String    | A short, unique, informative identifier containing only alphanumeric characters and underscores. |
 | members            | REQUIRED          | List      | IDs of the input parameters belonging to this group.                                             |
-| mutually-exclusive | OPTIONAL          | Boolean   | True if only one input in the group may be selected at runtime.                                  |
 | name               | REQUIRED          | String    | A human-readable name for the input group.                                                       |
+| description        | RECOMMENDED       | String    | Description of the input group.                                                                  |
+| all-or-none        | OPTIONAL          | Boolean   | True if all parameters included in this group need to be included together. .                    |
+| mutually-exclusive | OPTIONAL          | Boolean   | True if only one input in the group may be selected at runtime.                                  |
 | one-is-required    | OPTIONAL          | Boolean   | True if at least one of the inputs in the group must be selected.                                |
 
 ## Required arguments

@@ -67,4 +67,4 @@ The `custom` object has the following defined fields for use in the context of B
 |-------------------------|-------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | BIDSAppSpecVersion      | REQUIRED          | String    | The version of the BIDS application specification with which the application complies.                                                  |
 | OutputDataSpecification | OPTIONAL          | List      | If output data conforms to a standard definition (for example NIDM-1. 1. 0), these data standards may be included as a list of strings. |
-| <unspecified>           | OPTIONAL          | Any       | Any key referring to arbitrary metadata that may be relevant or of interest to the application and its users.                           |
+| `<unspecified>`         | OPTIONAL          | Any       | Any key referring to arbitrary metadata that may be relevant or of interest to the application and its users.                           |
