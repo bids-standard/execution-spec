@@ -11,7 +11,7 @@ of automated execution of diverse tools, a more useful interface is a mapping of
 parameter identifiers to their values, abstracting the way they are represented
 on the command-line (CLI). Boutiques is a standard developed for this mapping.
 [Boutiques](https://github.com/boutiques/boutiques) provides a
-[JSON schema](https://github.com/boutiques/boutiques/tree/master/schema) and
+[JSON schema](https://github.com/boutiques/boutiques/tree/master/boutiques/schema) and
 related tools to describe, validate, execute and share command-line tools, among
 other utilities. The Boutiques toolkit, named bosh, will be referred to when
 discussing examples throughout this specification.
