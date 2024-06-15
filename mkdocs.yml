@@ -5,14 +5,14 @@ repo_url: https://github.com/bids-standard/execution-spec
 
 nav:
 - Specification:
-  - Scope: scope.md
-  - Specification: specification.md
-  - User interface: ui.md
-  - Inputs: inputs.md
-  - Outputs: outputs.md
-  - Examples: examples.md
+  - Scope: https://bids-website.readthedocs.io/en/latest/standards/execution/scope.html
+  - Specification: https://bids-website.readthedocs.io/en/latest/standards/execution/specification.html
+  - User interface: https://bids-website.readthedocs.io/en/latest/standards/execution/ui.html
+  - Inputs: https://bids-website.readthedocs.io/en/latest/standards/execution/inputs.html
+  - Outputs:   https://bids-website.readthedocs.io/en/latest/standards/execution/outputs.html
+  - Examples: https://bids-website.readthedocs.io/en/latest/standards/execution/examples.html
 - Contributors: CONTRIBUTING.md
-- Release notes: CHANGELOG.md
+- Release notes: https://bids-website.readthedocs.io/en/latest/standards/execution/CHANGELOG.html
 
 theme:
   name: material
@@ -21,6 +21,7 @@ theme:
   features:
   - navigation.top
   - content.action.edit
+  custom_dir: src/overrides  
   icon:
     repo: fontawesome/brands/github
     edit: material/pencil
