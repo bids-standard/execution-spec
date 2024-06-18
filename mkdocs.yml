@@ -16,11 +16,13 @@ nav:
 
 theme:
   name: material
+  custom_dir: docs/overrides # - allows use of the uverride/main.html file
   favicon: images/favicon.png
   logo: images/logo.png
   features:
   - navigation.top
   - content.action.edit
+  - announce.dismiss # allows for closing banner
   icon:
     repo: fontawesome/brands/github
     edit: material/pencil
