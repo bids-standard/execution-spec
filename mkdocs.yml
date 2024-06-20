@@ -16,7 +16,7 @@ nav:
 
 theme:
   name: material
-  custom_dir: docs/overrides # - allows use of the uverride/main.html file
+  custom_dir: overrides # - allows use of the override/main.html file
   favicon: images/favicon.png
   logo: images/logo.png
   features:
