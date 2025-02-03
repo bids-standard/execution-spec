@@ -14,7 +14,7 @@ repos:
   - id: check-case-conflict
 
 - repo: https://github.com/codespell-project/codespell
-  rev: v2.4.0
+  rev: v2.4.1
   hooks:
   - id: codespell
     args: [--config=.codespellrc, --dictionary=-, --dictionary=.codespell_dict]
@@ -26,7 +26,7 @@ repos:
     args: [--mapping, '2', --sequence, '2', --offset, '0']
 
 - repo: https://github.com/psf/black
-  rev: 24.10.0
+  rev: 25.1.0
   hooks:
   - id: black
 
