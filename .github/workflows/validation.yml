@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
-    - uses: actions/setup-python@v5
+    - uses: actions/setup-python@v6
     - name: Run Python script to check for Latin phrases
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: |
